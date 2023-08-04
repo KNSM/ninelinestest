@@ -1,0 +1,237 @@
+.experience {
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		margin: 0 -20px;
+		position: relative;
+
+		@include devices {
+			flex-wrap: wrap;
+			margin: 0;
+		}
+	}
+
+	&__image {
+		flex: 1 1 auto;
+		position: relative;
+		width: calc(100% - 580px - 296px - 80px);
+
+		.image__wrapper {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.image {
+			max-width: (max-content);
+		}
+
+		@include devices {
+			width: 30%;
+			margin: 0 0 40px;
+		}
+
+		@include mobile {
+			width: 100%;
+			margin: 0 0 20px;
+		}
+	}
+
+	&__work {
+		margin: 0 20px;
+		width: 560px;
+		max-width: calc(100% - 269px - 80px);
+		flex: 0 0 auto;
+		position: relative;
+
+		@include devices {
+			width: 70%;
+			max-width: 70%;
+			margin: 0 0 40px;
+		}
+
+		@include mobile {
+			width: 100%;
+			max-width: 100%;
+			margin: 0 0 20px;
+		}
+	}
+
+	&__education {
+		margin: 0 20px;
+		width: 269px;
+		flex: 0 0 auto;
+		position: relative;
+
+		.section__title {
+			text-align: center;
+		}
+
+		@include devices {
+			width: 100%;
+			margin: 0;
+		}
+	}
+
+	&__work-list {
+
+		.list__item {
+			margin-bottom: 60px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			.item__date {
+				margin-bottom: 8px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				.text {
+					color: $color-gray;
+				}
+			}
+
+			.item__title {
+				margin-bottom: 8px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				.text {
+					font-weight: 700;
+
+					.image {
+						margin-left: 8px;
+					}
+				}
+			}
+
+			.item__company {
+				margin-bottom: 8px;
+
+				.company {
+
+					&__wrapper {
+						display: flex;
+						align-items: center;
+						margin: 0 -4px;
+					}
+
+					&__image {
+						margin: 0 4px;
+						width: 30px;
+					}
+
+					&__info {
+						margin: 0 4px;
+
+						&-wrapper {
+							display: flex;
+							margin: 0 -4px;
+						}
+					}
+
+					&__name {
+						margin: 0 4px;
+
+						.text {
+							font-weight: 700;
+						}
+					}
+
+					&__location {
+						margin: 0 4px;
+					}
+				}
+			}
+
+			.item__description {
+				margin-bottom: 4px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			.item__links {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+
+				.link {
+					display: block;
+					margin-bottom: 3px;
+					color: #2F80ED;
+					border-bottom: 1px #2F80ED solid;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+
+	&__education-list {
+
+		.list__item {
+			margin-bottom: 30px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			.item__wrapper {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+				width: 150px;
+				margin: 0 auto;
+			}
+
+			.item__image {
+				margin-bottom: 5px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			.item__title {
+				margin-bottom: 5px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				.text {
+					font-weight: 700;
+				}
+			}
+		}
+
+		@include devices {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 0 -10px -20px;
+
+			.list__item {
+				width: calc(33.3333% - 20px);
+				margin: 0 10px 20px;
+			}
+		}
+
+		@include mobile {
+			.list__item {
+				width: calc(50% - 20px);
+			}
+		}
+	}
+}

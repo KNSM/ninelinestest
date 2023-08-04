@@ -1,0 +1,19 @@
+section.section.section-advantages#section-advantages
+	.container
+		.section__title
+			.h2.text
+				| Навыки
+		.advantages
+			.advantages__wrapper
+				each object, key in data.advantages
+					.advantages__item
+						.item__wrapper
+							.item__title
+								p.text
+									!= object.title
+							.item__description
+								p.text
+									!= object.text
+
+
+

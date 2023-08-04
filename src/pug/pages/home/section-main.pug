@@ -1,0 +1,39 @@
+section.section.section-main#section-main
+	.container
+		.candidate
+			.candidate__wrapper
+				.candidate__info
+					.candidate__title.section__title.fade-in-text
+						h1.h1
+							!= data.candidate.name
+							| , <br>
+							!= data.candidate.role
+					.candidate__description.fade-in-text
+						p.text
+							!= data.candidate.description
+
+
+				.candidate__media
+					ul.candidate__media-list
+						li.list__item
+							a.list__link(
+								href="mailto:" + data.candidate.email
+							)
+								!= data.candidate.email
+
+						li.list__item
+							a.list__link(
+								href="tel:" + data.candidate.phone
+							)
+								!= data.candidate.phone
+						li.list__item
+							p.text
+								!= "г. " + data.candidate.city
+
+					ul.candidate__share-list
+						each object, key in data.candidate.share
+							li.list__item
+								a.list__link(id != object.id)
+									img(
+										src= `${baseDir}images/sprites/svg/${object.socialName}.svg`,
+									)

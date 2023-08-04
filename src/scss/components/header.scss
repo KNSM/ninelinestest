@@ -1,0 +1,167 @@
+.header {
+	padding: 100px 0 20px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 9;
+	background: #fff;
+	transition: .4s;
+
+	&.header--scrolled {
+		padding-top: 20px;
+
+		.header__logo {
+			.image {
+				width: 75px;
+			}
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__logo {
+		.image {
+			width: 150px;
+			transition: .2s;
+		}
+	}
+
+	&__menu {
+
+		.menu__list {
+			display: flex;
+
+			.list__item {
+				margin-right: 32px;
+
+				&:nth-child(1) {
+					.list__link {
+						position: relative;
+
+						&:before {
+							content: url('../images/sprites/png/header-texture.png');
+							display: block;
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							z-index: 0;
+							transform: translate(-50%, -60%);
+						}
+
+						span {
+							position: relative;
+						}
+					}
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				&.list__item--active {
+					.list__link {
+						color: $primary-color;
+					}
+				}
+			}
+
+			.list__link {
+				font-size: 18px;
+				font-weight: 700;
+				transition: .2s;
+				position: relative;
+
+				&:hover {
+					color: $primary-color;
+				}
+			}
+		}
+	}
+
+	&__burger {
+		display: none;
+		width: 26px;
+
+		span {
+			display: block;
+			width: 26px;
+			height: 2px;
+			background: #282A33;
+			margin-bottom: 5px;
+			cursor: pointer;
+			transition: .2s;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	@include devices {
+		padding: 40px 0 20px;
+
+		&__logo {
+			width: 100px;
+		}
+
+		&__burger {
+			display: block;
+			position: relative;
+			z-index: 99999999999;
+
+			&.is-active {
+				span {
+					margin-bottom: 0;
+
+					&:nth-child(2) {
+						display: none;
+					}
+
+					&:nth-child(1) {
+						transform: translateY(1px) rotate(45deg);
+					}
+
+					&:nth-child(3) {
+						transform: translateY(-1px) rotate(-45deg);
+					}
+				}
+			}
+		}
+
+		&__menu {
+			position: fixed;
+			top: 0;
+			right: 0;
+			transition: .2s;
+			transform: translateX(100%);
+			width: 100%;
+			height: 100vh;
+			z-index: 9999;
+			background: #fff;
+
+			&.is-active {
+				transform: translateX(0);
+				padding: 60px 40px;
+			}
+
+			.menu__list {
+				display: block;
+
+				.list__item {
+					margin-bottom: 40px;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+
+				.list__link {
+					font-size: 26px;
+				}
+			}
+		}
+	}
+}

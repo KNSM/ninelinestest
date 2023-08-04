@@ -1,0 +1,74 @@
+section.section.section-experience#section-experience
+	.container
+		.experience
+			.experience__wrapper
+				.experience__work
+					.experience__title.section__title
+						h2.h2
+							| Опыт работы
+					ul.experience__work-list
+						each object, key in data.experience.work
+							li.list__item
+								.item__wrapper
+									.item__date
+										p.text
+											!= object.date
+									.item__title
+										p.text
+											!= object.title
+											img.image(
+												src = object.titleDecUrl
+											)
+									.item__company
+										.company__wrapper
+											if object.companyImageUrl
+												.company__image
+													img.image(
+														src= object.companyImageUrl)
+											.company__info
+												.company__info-wrapper
+													if object.companyName
+														.company__name
+															p.text
+																!= object.companyName
+													.company__location
+														p.text
+															!= object.location
+									.item__description
+										p.text
+											!= object.description
+									.item__links
+										if object.links
+											each link, key in object.links
+												a.link(
+													href= link.url)
+													!= link.text
+
+
+
+				.experience__image#sticky-image
+					.image__wrapper(data-scroll, data-scroll-sticky, data-scroll-target=".experience__wrapper")
+						img.image(src='/images/sprites/png/flying-man.png')
+				.experience__education
+							.experience__title.section__title
+								h2.h2
+									| Образование
+							ul.experience__education-list
+								each object, key in data.experience.education
+									li.list__item
+										.item__wrapper
+											.item__image
+												img.image(
+													src= object.decorationUrl)
+											.item__title
+												p.text
+													!= object.title
+											.item__text
+												p.text
+													!=object.institution
+		.section__bg-image-before
+			img.image(src='/images/sprites/png/bg-texture-1.png')
+		.section__bg-image-after
+			img.image(src='/images/sprites/png/bg-texture-2.png')
+
+

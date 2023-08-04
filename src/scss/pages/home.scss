@@ -1,0 +1,7 @@
+.home {
+	padding: 160px 0 0;
+
+	@include desktop {
+		padding: 290px 0 0;
+	}
+}

@@ -1,0 +1,18 @@
+header.header
+	.container
+		.header__wrapper
+			.header__logo
+				a(href='./')
+					img.image(src='./images/sprites/png/logo.png')
+			nav.header__menu
+				ul.menu__list
+					each object, key in data.header.menu
+						li.list__item
+							a.list__link.js-to-anchor(href=object.url)
+								span
+									!= object.title
+			.header__burger.js-burger
+				span
+				span
+				span
+
